@@ -1,0 +1,209 @@
+@use '@/styles/typography' as *;
+@use '@/styles/colors' as *;
+@use '@/styles/breakpoints' as *;
+
+.footer {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  background-color: $color-light-gray;
+
+  @include respond-to('mdlg') {
+    gap: 10px;
+  }
+
+  @include respond-to('xs') {
+    padding: 14px 16px 22px 16px;
+    gap: 24px;
+  }
+}
+
+.smallLogo {
+  display: none;
+
+  @include respond-to('sm') {
+    display: block;
+  }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 24px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.logo {
+  margin: 113px auto;
+
+  @include respond-to('sm') {
+    display: none;
+  }
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+
+  @include respond-to('mdlg') {
+    justify-content: flex-start;
+    flex-direction: column-reverse;
+    gap: 10px;
+  }
+
+  @include respond-to('xs') {
+    gap: 24px;
+  }
+}
+
+.secondaryWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+
+  @include respond-to('xs') {
+    margin-top: 32px;
+    gap: 12px;
+  }
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+
+  input {
+    width: 100%;
+    height: 59px;
+    max-width: 430px;
+    padding: 17px 28px 18px 28px;
+    border: 1px solid $color-white-30;
+    border-radius: 80px;
+    background: $color-light-gray;
+    backdrop-filter: blur(24px);
+    outline: none;
+    color: $color-white;
+    @include link-md;
+
+    &::placeholder {
+      color: $color-white-60;
+    }
+  }
+
+  @include respond-to('xs') {
+    flex-direction: column;
+
+    div {
+      margin-top: 0;
+    }
+
+    input {
+      height: 51px;
+      padding: 13px 24px 14px 24px;
+    }
+  }
+}
+
+.subtitle {
+  color: $color-white;
+  @include link-md;
+
+  @include respond-to('xs') {
+    margin-bottom: 11px;
+  }
+}
+
+.emailDisclaimer {
+  max-width: 430px;
+  color: $color-white;
+  @include disclaimer;
+
+  @include respond-to('xs') {
+  }
+}
+
+.socialLinks {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  @include respond-to('xs') {
+    gap: 14px;
+  }
+}
+
+.endWrapper {
+  display: flex;
+  justify-content: space-between;
+
+  @include respond-to('mdlg') {
+    justify-content: flex-start;
+    flex-direction: column-reverse;
+    gap: 10px;
+  }
+
+  @include respond-to('xs') {
+    gap: 18px;
+  }
+}
+
+.terms {
+  margin-bottom: 8px;
+  align-self: flex-end;
+  display: flex;
+  list-style: none;
+  gap: 24px;
+
+  p {
+    color: $color-white;
+    @include link-sm;
+  }
+
+  @include respond-to('mdlg') {
+    align-self: flex-start;
+    flex-wrap: wrap;
+  }
+
+  @include respond-to('xs') {
+    gap: 12px;
+
+    a {
+      color: $color-white-60;
+    }
+  }
+}
+
+.appsWrapper {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  @include respond-to('xs') {
+    margin-top: 32px;
+    gap: 12px;
+  }
+}
+
+.googlePlay {
+  @include respond-to('xs') {
+    height: 43px;
+    width: 134px;
+  }
+}
+
+.appStore {
+  @include respond-to('xs') {
+    height: 44px;
+    width: 131px;
+  }
+}

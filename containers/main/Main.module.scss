@@ -1,0 +1,175 @@
+@use '@/styles/typography' as *;
+@use '@/styles/colors' as *;
+@use '@/styles/breakpoints' as *;
+
+.main {
+  position: relative;
+  background: $gradient;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  margin-top: -80px;
+  padding: 128px 40px 0 40px;
+
+  @include respond-to('sm') {
+    height: auto;
+    margin-top: 0;
+    padding: 0;
+    flex-direction: column;
+  }
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 560px;
+  color: $color-white;
+
+  h1 {
+    margin-bottom: 179px;
+    max-width: 560px;
+    color: $color-white;
+    @include heading-xl;
+  }
+
+  p {
+    margin-bottom: 31px;
+    max-width: 540px;
+    color: $color-white;
+    @include paragraph;
+  }
+
+  @include respond-to('smmd') {
+    h1 {
+      margin-bottom: 50px;
+      max-width: 500px;
+    }
+
+    p {
+      max-width: 350px;
+    }
+  }
+
+  @include respond-to('sm') {
+    margin-top: 20px;
+    max-width: 100%;
+
+    h1 {
+      margin: 0 auto 32px auto;
+      max-width: 80%;
+      text-align: center;
+    }
+
+    p {
+      margin: 0 auto 32px auto;
+      max-width: 80%;
+      text-align: center;
+    }
+  }
+
+  @include respond-to('xs') {
+    h1 {
+      margin: 0 auto 32px auto;
+      padding-left: 16px;
+      max-width: 100%;
+      text-align: start;
+    }
+
+    p {
+      padding-left: 16px;
+      max-width: 100%;
+      text-align: start;
+    }
+  }
+}
+
+.buttonsWrapper {
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  @include respond-to('sm') {
+    justify-content: center;
+  }
+
+  @include respond-to('xs') {
+    margin-bottom: 0;
+    margin-left: 16px;
+    align-items: center;
+    justify-content: flex-start;
+  }
+}
+
+.imageWrapper {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-25%, -20%);
+  z-index: 1;
+
+  @include respond-to('sm') {
+    height: 530px;
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    width: 100%;
+  }
+}
+
+.heroImage {
+  position: relative;
+  z-index: 1;
+
+  @include respond-to('sm') {
+    object-fit: cover;
+    top: -600px;
+    left: -390px;
+    transform: scale(1.2);
+  }
+
+  @include respond-to('xssm') {
+    top: -500px;
+  }
+
+  @include respond-to('xs') {
+    transform: rotate(-11deg) scale(0.7);
+    top: -478px;
+    left: -390px;
+  }
+}
+
+.handImage {
+  position: absolute;
+  top: 403px;
+  left: 215px;
+  z-index: 2;
+  object-fit: contain;
+
+  @include respond-to('mdlg') {
+    width: 380px;
+    top: 500px;
+    left: 330px;
+  }
+
+  @include respond-to('smmd') {
+    width: 300px;
+  }
+
+  @include respond-to('sm') {
+    top: -80px;
+    left: 5vw;
+    width: 397px;
+  }
+
+  @include respond-to('xssm') {
+    left: -10vw;
+  }
+
+  @include respond-to('xs') {
+    top: -75px;
+    left: -65px;
+  }
+}

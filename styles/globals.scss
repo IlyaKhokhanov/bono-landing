@@ -1,0 +1,30 @@
+@use './colors' as *;
+@use './breakpoints' as *;
+@use './typography' as *;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-inter), sans-serif;
+  background: $gradient;
+}
+
+main {
+  background-color: $color-black;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-family: var(--font-inter), sans-serif;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1440px;
+}

@@ -1,0 +1,71 @@
+@use '@/styles/typography' as *;
+@use '@/styles/colors' as *;
+@use '@/styles/breakpoints' as *;
+
+.faqs {
+  padding: 0 40px 240px 40px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+
+  @include respond-to('smmd') {
+    padding: 0 16px 120px 16px;
+    gap: 20px;
+  }
+
+  @include respond-to('sm') {
+    flex-direction: column;
+  }
+
+  @include respond-to('xs') {
+    gap: 40px;
+  }
+}
+
+.title {
+  width: 260px;
+  flex-shrink: 1;
+
+  h2 {
+    margin-bottom: 50px;
+    color: $color-white;
+    @include heading-md;
+  }
+
+  p {
+    white-space: nowrap;
+    color: $color-light-gray;
+    @include body-md;
+  }
+
+  @include respond-to('xs') {
+    h2 {
+      margin-bottom: 32px;
+    }
+  }
+}
+
+.questions {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  @include respond-to('xxl') {
+    max-width: 929px;
+  }
+
+  @include respond-to('xs') {
+    gap: 8px;
+  }
+}
+
+.button {
+  margin-top: 44px;
+  align-self: flex-start;
+
+  @include respond-to('xs') {
+    margin-top: 32px;
+  }
+}

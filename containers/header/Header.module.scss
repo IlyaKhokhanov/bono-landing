@@ -1,0 +1,149 @@
+@use '@/styles/breakpoints' as *;
+@use '@/styles/typography' as *;
+@use '@/styles/colors' as *;
+
+.header {
+  position: relative;
+  z-index: 110;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background: transparent;
+
+  @include respond-to('sm') {
+    padding: 15px 16px;
+  }
+}
+
+.logo {
+  height: 22px;
+  width: 136px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-image: url('/images/logo.svg');
+  position: relative;
+  z-index: 150;
+
+  @include respond-to('sm') {
+    margin-right: 20px;
+    height: 22px;
+    width: 80px;
+    background-image: url('/images/logo-mob.svg');
+  }
+}
+
+.burger {
+  position: relative;
+  width: 53px;
+  height: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 140;
+
+  span {
+    position: absolute;
+    left: 0;
+    width: 53px;
+    height: 2px;
+    background-color: #fff;
+    transition:
+      transform 0.3s ease,
+      top 0.3s ease,
+      opacity 0.3s ease;
+    transform-origin: center;
+  }
+
+  span:first-child {
+    top: 8px;
+  }
+
+  span:last-child {
+    top: 18px;
+  }
+
+  &.open {
+    span:first-child {
+      top: 13px;
+      transform: rotate(45deg);
+    }
+
+    span:last-child {
+      top: 13px;
+      transform: rotate(-45deg);
+    }
+  }
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  position: relative;
+
+  > button {
+    position: relative;
+    z-index: 130;
+  }
+}
+
+.footerText {
+  display: none;
+  color: $color-light-gray;
+  margin-top: 34px;
+  @include link-sm;
+
+  @include respond-to('sm') {
+    display: block;
+  }
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+  margin: 0;
+  padding: 0;
+  transition: transform 0.4s ease;
+
+  @include respond-to('sm') {
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 24px;
+    width: 100%;
+    background: $color-black;
+    padding: 32px 16px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 665px;
+    transform: translateY(-100%);
+    z-index: 110;
+    overflow-y: auto;
+
+    &.open {
+      transform: translateY(0);
+    }
+  }
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 50;
+
+  &.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}

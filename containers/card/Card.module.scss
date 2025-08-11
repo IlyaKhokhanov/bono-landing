@@ -1,0 +1,119 @@
+@use '@/styles/breakpoints' as *;
+@use '@/styles/typography' as *;
+@use '@/styles/colors' as *;
+
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  margin: 88px auto 55px auto;
+  color: $color-light-gray;
+  text-align: center;
+  @include caption;
+
+  @include respond-to('sm') {
+    margin-top: 55px;
+    margin-bottom: 25px;
+    max-width: 220px;
+  }
+}
+
+.cardContent {
+  height: 828px;
+  display: flex;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  @include respond-to('smmd') {
+    height: 900px;
+  }
+
+  @include respond-to('sm') {
+    height: auto;
+    flex-direction: column-reverse;
+  }
+}
+
+.imageWrapper,
+.textContent {
+  width: 50%;
+}
+
+.imageWrapper {
+  @include respond-to('sm') {
+    width: 100%;
+    height: 375px;
+    overflow: hidden;
+  }
+}
+
+.image {
+  object-fit: contain;
+
+  @include respond-to('lg') {
+    width: 750px;
+  }
+
+  @include respond-to('smmd') {
+    width: 600px;
+  }
+
+  @include respond-to('sm') {
+    width: 615px;
+  }
+}
+
+.textContent {
+  margin-left: 95px;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+
+  h2 {
+    max-width: 540px;
+    color: $color-white;
+    @include heading-md;
+    span {
+      color: $color-light-gray;
+    }
+  }
+
+  p {
+    max-width: 510px;
+    color: $color-light-gray;
+    @include body-md;
+
+    span {
+      display: none;
+    }
+  }
+
+  @include respond-to('lg') {
+    margin-left: 60px;
+  }
+
+  @include respond-to('sm') {
+    margin: 100px auto 0 auto;
+    padding: 0 10px;
+    width: 100%;
+    gap: 32px;
+
+    h2 {
+      align-self: center;
+      text-align: center;
+    }
+
+    p {
+      align-self: center;
+      text-align: center;
+
+      span {
+        display: inline;
+      }
+    }
+  }
+}

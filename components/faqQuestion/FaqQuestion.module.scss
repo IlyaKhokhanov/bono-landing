@@ -1,0 +1,76 @@
+@use '@/styles/colors' as *;
+@use '@/styles/breakpoints' as *;
+@use '@/styles/typography' as *;
+
+.question {
+  padding: 40px;
+  width: 100%;
+  background-color: $color-light-black;
+  border-radius: 24px;
+
+  &.open .arrow {
+    transform: rotateX(180deg);
+  }
+
+  @include respond-to('xs') {
+    padding: 20px 22px 24px 20px;
+  }
+}
+
+.header {
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  cursor: pointer;
+  background: transparent;
+  color: $color-white;
+
+  &:hover {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .arrow {
+    transition: filter 0.3s ease;
+  }
+
+  &:hover .arrow {
+    filter: brightness(0.6);
+  }
+}
+
+.title {
+  white-space: nowrap;
+  text-align: left;
+  @include heading-sm;
+}
+
+.arrow {
+  transform: rotateX(0deg);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+
+  @include respond-to('xs') {
+    width: 13px;
+    height: 8px;
+  }
+}
+
+.answerWrapper {
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.answer {
+  margin-top: 45px;
+  max-width: 605px;
+  color: $color-light-gray;
+  @include body-md;
+
+  @include respond-to('xs') {
+    margin-top: 28px;
+    margin-right: 5px;
+    @include body-sm;
+  }
+}

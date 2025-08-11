@@ -1,0 +1,102 @@
+@use '@/styles/typography' as *;
+@use '@/styles/colors' as *;
+@use '@/styles/breakpoints' as *;
+
+.customize {
+  position: relative;
+  margin-top: 240px;
+  overflow: hidden;
+
+  h2 {
+    position: relative;
+    z-index: 2;
+    margin: 0 auto;
+    margin-bottom: 48px;
+    max-width: 710px;
+    text-align: center;
+    color: $color-white;
+    @include heading-xl;
+
+    span {
+      color: $color-light-gray;
+    }
+  }
+
+  p {
+    display: block;
+    position: relative;
+    z-index: 2;
+    margin: 0 auto;
+    max-width: 626px;
+    text-align: center;
+    color: $color-light-gray;
+    @include body-md;
+  }
+
+  @include respond-to('sm') {
+    margin-top: 120px;
+  }
+
+  @include respond-to('xs') {
+    height: 821px;
+
+    h2 {
+      margin-bottom: 32px;
+      padding: 0 18px;
+      @include heading-md;
+    }
+
+    p {
+      padding: 0 18px;
+    }
+  }
+}
+
+.heroImage {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 0;
+  max-height: 1500px;
+  z-index: 1;
+  object-fit: cover;
+
+  @include respond-to('xxl') {
+    top: 320px;
+  }
+
+  @include respond-to('xs') {
+    width: auto;
+    object-fit: contain;
+    top: 238px;
+    left: -48%;
+    transform: scale(0.9);
+  }
+}
+
+.cards {
+  position: relative;
+  z-index: 3;
+  display: block;
+  margin: 104px auto 240px auto;
+  transform: translateX(45px);
+  object-fit: contain;
+
+  @include respond-to('mdlg') {
+    margin-top: 50px;
+    transform: translateX(0);
+  }
+
+  @include respond-to('sm') {
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 300px;
+    transform: translateY(-50px);
+  }
+
+  @include respond-to('xs') {
+    top: -166px;
+    width: 277px;
+    transform: translateX(9px);
+  }
+}

@@ -1,0 +1,60 @@
+@use '@/styles/breakpoints' as *;
+
+.wrapper {
+  overflow: hidden;
+  width: 100%;
+  padding: 27px;
+
+  &:hover .track {
+    animation-play-state: paused;
+  }
+}
+
+.track {
+  display: flex;
+  width: fit-content;
+  animation: scroll 20s linear infinite;
+}
+
+.content {
+  display: flex;
+  gap: 150px;
+  padding-right: 150px;
+
+  a {
+    display: inline-block;
+
+    img {
+      height: 38px;
+      width: auto;
+      object-fit: contain;
+      transition: transform 0.3s;
+      opacity: 0.8;
+
+      &:hover {
+        transform: scale(1.05);
+        opacity: 1;
+      }
+    }
+  }
+
+  @include respond-to('sm') {
+    gap: 85px;
+    padding-right: 85px;
+
+    a {
+      img {
+        height: 28px;
+      }
+    }
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

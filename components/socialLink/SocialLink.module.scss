@@ -1,0 +1,33 @@
+@use '@/styles/breakpoints' as *;
+@use '@/styles/colors' as *;
+
+.social {
+  width: 59px;
+  height: 59px;
+  border-radius: 50%;
+  background-color: $color-white-10;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+
+  img {
+    width: 27px;
+    height: 27px;
+    object-fit: contain;
+  }
+
+  &:hover {
+    background-color: $color-white-20;
+  }
+
+  @include respond-to('sm') {
+    width: 51px;
+    height: 51px;
+
+    img {
+      width: 23px;
+      height: 23px;
+    }
+  }
+}

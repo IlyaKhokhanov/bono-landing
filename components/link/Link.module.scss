@@ -1,0 +1,49 @@
+@use '@/styles/colors' as *;
+@use '@/styles/typography' as *;
+@use '@/styles/breakpoints' as *;
+
+.link {
+  font-family: var(--font-inter), sans-serif;
+  text-decoration: none;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.nav {
+  color: $color-white;
+  @include nav-link;
+
+  &:hover {
+    color: $color-white-60;
+  }
+}
+
+.social {
+  background: linear-gradient(338.26deg, #8fc1ff -41.31%, #bae8f5 51.47%, #b8f4f2 123.84%);
+  background-clip: text;
+  color: transparent;
+  @include link-md;
+
+  &:hover {
+    background: none;
+    color: $color-white-60;
+  }
+}
+
+.small {
+  color: $color-white;
+  @include link-sm;
+
+  &:hover {
+    color: $color-white-60;
+  }
+}
+
+.medium {
+  color: $color-white;
+  @include link-md;
+
+  &:hover {
+    color: $color-white-60;
+  }
+}
