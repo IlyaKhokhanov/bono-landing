@@ -10,9 +10,12 @@ export default function App() {
           Spending insights <span>at your fingertips</span>
         </h2>
         <p>
-          Crafted to enhance your day-to-day spending with a focus on transparency and efficiency. Instant transfers,
-          virtual cards, and heads-up displays offer reassurance and peace of mind when it comes to managing your
-          finances.
+          Crafted to enhance your day-to-
+          <span>
+            <br />
+          </span>
+          day spending with a focus on transparency and efficiency. Instant transfers, virtual cards, and heads-up
+          displays offer reassurance and peace of mind when it comes to managing your finances.
         </p>
       </div>
 

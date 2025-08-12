@@ -51,7 +51,7 @@
 }
 
 @mixin link-md {
-  @include typography-base(18px, 1.35);
+  @include typography-base(18px, 1.35, 0.20px);
 }
 
 @mixin nav-link {

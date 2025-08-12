@@ -48,7 +48,7 @@ export default function LensEffect() {
           tDiffuse: { value: null },
           uMouse: { value: new THREE.Vector2(0.5, 0.5) },
           uResolution: { value: new THREE.Vector2(width, height) },
-          uRadius: { value: 100.0 }, // базовый радиус
+          uRadius: { value: 100.0 },
         },
         vertexShader: `
           varying vec2 vUv;
@@ -68,21 +68,19 @@ export default function LensEffect() {
               vec2 uv = vUv;
               vec4 base = texture2D(tDiffuse, uv);
 
-              // соотношение сторон для корректного круга
               vec2 aspect = vec2(1.0, uResolution.y / uResolution.x);
               float dist = length((uv - uMouse) * aspect);
 
-              // мягкая маска — ещё плавнее и больше по краям
               float mask = 1.0 - smoothstep(
-                  (uRadius + 40.0) / uResolution.x,
-                  (uRadius + 120.0) / uResolution.x,
+                  (uRadius) / uResolution.x,
+                  (uRadius + 200.0) / uResolution.x,
                   dist
               );
 
               if (mask > 0.0) {
                   vec4 sum = vec4(0.0);
-                  int blurRange = 5; // сильнее размытие: 11x11 выборок
-                  float blurSize = 3.0 / uResolution.x; // шаг между выборками
+                  int blurRange = 5; // сила размытия
+                  float blurSize = 3.0 / uResolution.x;
 
                   for (int x = -blurRange; x <= blurRange; x++) {
                       for (int y = -blurRange; y <= blurRange; y++) {
@@ -91,6 +89,7 @@ export default function LensEffect() {
                       }
                   }
                   vec4 blurred = sum / float((blurRange*2+1)*(blurRange*2+1));
+
                   base = mix(base, blurred, mask);
               }
 

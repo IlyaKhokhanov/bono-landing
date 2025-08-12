@@ -50,6 +50,10 @@
     width: 510px;
     color: $color-light-gray;
     @include body-md;
+
+    span {
+      display: none;
+    }
   }
 
   @include respond-to('x') {
@@ -70,6 +74,16 @@
     h2,
     p {
       max-width: 100%;
+    }
+  }
+
+  @include respond-to('xs') {
+    margin-right: 15px;
+
+    p {
+      span {
+        display: inline;
+      }
     }
   }
 }

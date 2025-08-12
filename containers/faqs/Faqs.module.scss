@@ -3,7 +3,7 @@
 @use '@/styles/breakpoints' as *;
 
 .faqs {
-  padding: 0 40px 240px 40px;
+  padding: 5px 40px 240px 40px;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -62,7 +62,7 @@
 }
 
 .button {
-  margin-top: 44px;
+  margin-top: 42px;
   align-self: flex-start;
 
   @include respond-to('xs') {
