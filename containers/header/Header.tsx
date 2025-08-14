@@ -37,7 +37,12 @@ export default function Header() {
       <nav className={styles.nav}>
         <ul className={`${styles.menu} ${open ? styles.open : ''}`}>
           {navLinks.map((link) => (
-            <li key={link.title} onClick={toggle}>
+            <li
+              key={link.title}
+              onClick={() => {
+                if (open) toggle();
+              }}
+            >
               <Link title={link.title} link={link.link} variant="nav" />
             </li>
           ))}

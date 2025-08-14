@@ -3,7 +3,6 @@
 @use '@/styles/typography' as *;
 
 .question {
-  padding: 40px;
   width: 100%;
   background-color: $color-light-black;
   border-radius: 24px;
@@ -11,13 +10,10 @@
   &.open .arrow {
     transform: rotateX(180deg);
   }
-
-  @include respond-to('xs') {
-    padding: 20px 22px 24px 20px;
-  }
 }
 
 .header {
+  padding: 40px;
   border: none;
   display: flex;
   align-items: center;
@@ -37,6 +33,10 @@
 
   &:hover .arrow {
     filter: brightness(0.6);
+  }
+
+  @include respond-to('xs') {
+    padding: 20px 22px 24px 20px;
   }
 }
 
@@ -63,14 +63,13 @@
 }
 
 .answer {
-  margin-top: 45px;
+  margin: 5px 40px 40px 40px;
   max-width: 605px;
   color: $color-light-gray;
   @include body-md;
 
   @include respond-to('xs') {
-    margin-top: 28px;
-    margin-right: 5px;
+    margin: 4px 27px 24px 20px;
     @include body-sm;
   }
 }
