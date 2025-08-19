@@ -1,17 +1,18 @@
 import Image from 'next/image';
+
 import styles from './RunningLine.module.scss';
 
 export default function RunningLine() {
   const items = [
     {
-      href: 'https://www.bono.digital/',
-      img: '/images/logo-bono.png',
-      alt: 'Bono logo',
+      href: '#',
+      img: '/images/logo.svg',
+      alt: 'Logo',
     },
     {
-      href: 'https://www.bono.digital/',
-      img: '/images/logo-bono.png',
-      alt: 'Bono logo',
+      href: '#',
+      img: '/images/logo.svg',
+      alt: 'Logo',
     },
   ];
 
